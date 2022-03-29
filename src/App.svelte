@@ -18,7 +18,7 @@
         <AllChits />
       </main>
 
-      <Aside />
+      <!-- <Aside /> -->
     </div>
   </section>
 </div>
