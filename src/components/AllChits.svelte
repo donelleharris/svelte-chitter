@@ -1,16 +1,11 @@
 <script>
     import Chit from "./Chit.svelte";
     import {ChitStore} from "../stores/ChitStore";
-import { each } from "svelte/internal";
-
-    import { onMount, onDestroy } from "svelte";
+    import { onDestroy } from "svelte";
 
     let allChits;
     let chitStoreUnsub = ChitStore.subscribe((data) => allChits =  data);
 
-    // onMount(() => {
-    //     console.log("Component Mounted");
-    // });
     onDestroy(() => {
         chitStoreUnsub();
     });

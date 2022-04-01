@@ -1,15 +1,8 @@
 <script>
 	import {ChitStore} from "../stores/ChitStore.js";
-	import { onDestroy } from "svelte";
+	
 
 	let newChitContent;
-
-	let allChits;
-	let chitStoreUnsub = ChitStore.subscribe((data) => allChits =  data);
-
-	onDestroy(() => {
-		chitStoreUnsub();
-	});
 
 	function createChit(){
 		//console.log(newChit);
@@ -17,11 +10,10 @@
 			id: 3,
 			author: "Me",
 			content: newChitContent,
-			handle: "@Me"
+			handle: "@Me",
+			likes: 0
 		};
-		ChitStore.set(
-			[...allChits, newChit]
-		);
+		ChitStore.addNewChit(newChit);
 	}
 </script>
 <div class="chit-entry">
