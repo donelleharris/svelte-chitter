@@ -1,0 +1,6 @@
+{
+    "chits": [
+        { id: 1, author: "Nauman", handle: "@recluze", content: "First", likes: 0 },
+        { id: 2, author: "Not Nauman", handle: "@extravert", content: "Second", likes: 0 }
+    ]
+}
